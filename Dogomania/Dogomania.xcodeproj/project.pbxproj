@@ -13,6 +13,7 @@
 		D0A001D925E4FF5900E55832 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A001D725E4FF5900E55832 /* Main.storyboard */; };
 		D0A001DB25E4FF5A00E55832 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0A001DA25E4FF5A00E55832 /* Assets.xcassets */; };
 		D0A001DE25E4FF5A00E55832 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A001DC25E4FF5A00E55832 /* LaunchScreen.storyboard */; };
+		D0DA36F9263B007B00176CD5 /* TimeBD.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DA36F8263B007B00176CD5 /* TimeBD.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		D0A001DA25E4FF5A00E55832 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0A001DD25E4FF5A00E55832 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0A001DF25E4FF5A00E55832 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0DA36F8263B007B00176CD5 /* TimeBD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeBD.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				D0A001DA25E4FF5A00E55832 /* Assets.xcassets */,
 				D0A001DC25E4FF5A00E55832 /* LaunchScreen.storyboard */,
 				D0A001DF25E4FF5A00E55832 /* Info.plist */,
+				D0DA36F8263B007B00176CD5 /* TimeBD.swift */,
 			);
 			path = Dogomania;
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0DA36F9263B007B00176CD5 /* TimeBD.swift in Sources */,
 				D0A001D625E4FF5900E55832 /* ViewController.swift in Sources */,
 				D0A001D225E4FF5900E55832 /* AppDelegate.swift in Sources */,
 				D0A001D425E4FF5900E55832 /* SceneDelegate.swift in Sources */,
