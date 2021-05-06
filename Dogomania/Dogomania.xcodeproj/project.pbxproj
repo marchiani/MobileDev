@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8609184813733F07E405231F /* Pods_Dogomania.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 779D3B1D4D45FAF04D8A45C9 /* Pods_Dogomania.framework */; };
+		D081B6942644389500942A6E /* StageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D081B6932644389500942A6E /* StageViewController.swift */; };
 		D0A001D225E4FF5900E55832 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A001D125E4FF5900E55832 /* AppDelegate.swift */; };
 		D0A001D425E4FF5900E55832 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A001D325E4FF5900E55832 /* SceneDelegate.swift */; };
 		D0A001D625E4FF5900E55832 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A001D525E4FF5900E55832 /* ViewController.swift */; };
@@ -16,6 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		779D3B1D4D45FAF04D8A45C9 /* Pods_Dogomania.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dogomania.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E44657EF0CA21CD88BC59AB /* Pods-Dogomania.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dogomania.debug.xcconfig"; path = "Target Support Files/Pods-Dogomania/Pods-Dogomania.debug.xcconfig"; sourceTree = "<group>"; };
+		C18C0E4D728FE86F2089B300 /* Pods-Dogomania.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dogomania.release.xcconfig"; path = "Target Support Files/Pods-Dogomania/Pods-Dogomania.release.xcconfig"; sourceTree = "<group>"; };
+		D081B6932644389500942A6E /* StageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageViewController.swift; sourceTree = "<group>"; };
 		D0A001CE25E4FF5900E55832 /* Dogomania.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dogomania.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A001D125E4FF5900E55832 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0A001D325E4FF5900E55832 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +37,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8609184813733F07E405231F /* Pods_Dogomania.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7041787DB7B6B77664AA36E1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7E44657EF0CA21CD88BC59AB /* Pods-Dogomania.debug.xcconfig */,
+				C18C0E4D728FE86F2089B300 /* Pods-Dogomania.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B017D943FD384B66F5303D16 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				779D3B1D4D45FAF04D8A45C9 /* Pods_Dogomania.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D0A001C525E4FF5900E55832 = {
 			isa = PBXGroup;
 			children = (
 				D0A001D025E4FF5900E55832 /* Dogomania */,
 				D0A001CF25E4FF5900E55832 /* Products */,
+				7041787DB7B6B77664AA36E1 /* Pods */,
+				B017D943FD384B66F5303D16 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,6 +90,7 @@
 				D0A001DA25E4FF5A00E55832 /* Assets.xcassets */,
 				D0A001DC25E4FF5A00E55832 /* LaunchScreen.storyboard */,
 				D0A001DF25E4FF5A00E55832 /* Info.plist */,
+				D081B6932644389500942A6E /* StageViewController.swift */,
 			);
 			path = Dogomania;
 			sourceTree = "<group>";
@@ -74,9 +102,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0A001E225E4FF5A00E55832 /* Build configuration list for PBXNativeTarget "Dogomania" */;
 			buildPhases = (
+				C60193E81F0C3F8392261F2F /* [CP] Check Pods Manifest.lock */,
 				D0A001CA25E4FF5900E55832 /* Sources */,
 				D0A001CB25E4FF5900E55832 /* Frameworks */,
 				D0A001CC25E4FF5900E55832 /* Resources */,
+				FD02F08839D0607A2211B08C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +162,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C60193E81F0C3F8392261F2F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Dogomania-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD02F08839D0607A2211B08C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dogomania/Pods-Dogomania-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dogomania/Pods-Dogomania-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dogomania/Pods-Dogomania-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D0A001CA25E4FF5900E55832 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -140,6 +212,7 @@
 				D0A001D625E4FF5900E55832 /* ViewController.swift in Sources */,
 				D0A001D225E4FF5900E55832 /* AppDelegate.swift in Sources */,
 				D0A001D425E4FF5900E55832 /* SceneDelegate.swift in Sources */,
+				D081B6942644389500942A6E /* StageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +356,7 @@
 		};
 		D0A001E325E4FF5A00E55832 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E44657EF0CA21CD88BC59AB /* Pods-Dogomania.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -301,6 +375,7 @@
 		};
 		D0A001E425E4FF5A00E55832 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C18C0E4D728FE86F2089B300 /* Pods-Dogomania.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

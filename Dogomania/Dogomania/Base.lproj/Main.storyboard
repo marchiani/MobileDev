@@ -8,17 +8,17 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--Stage-->
         <scene sceneID="jtF-wY-5gw">
             <objects>
-                <viewController id="FBD-YB-iwb" sceneMemberID="viewController">
+                <viewController id="FBD-YB-iwb" customClass="StageViewController" customModule="Dogomania" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ezs-H9-b6o">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="eGa-FJ-xHR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="fut-cK-OuL"/>
+                    <tabBarItem key="tabBarItem" title="Stage" image="paperplane.circle" catalog="system" id="fut-cK-OuL"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Wz-Ac-d6I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -27,7 +27,7 @@
         <!--Main-->
         <scene sceneID="PQk-Bu-xFP">
             <objects>
-                <viewController id="SEa-i0-xBi" sceneMemberID="viewController">
+                <viewController id="SEa-i0-xBi" customClass="ViewController" customModule="Dogomania" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CEH-f0-dez">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -76,6 +76,7 @@ IВ-83
     </scenes>
     <resources>
         <image name="mail" catalog="system" width="128" height="93"/>
+        <image name="paperplane.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
