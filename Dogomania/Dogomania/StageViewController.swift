@@ -9,12 +9,12 @@ import UIKit
 import Charts
 
 class StageViewController: UIViewController, ChartViewDelegate {
-    var lineChart = LineChartView();
+    var pieChart = PieChartView();
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        lineChart.delegate = self
+        pieChart.delegate = self
     }
     
     override func viewDidLayoutSubviews() {
@@ -24,22 +24,23 @@ class StageViewController: UIViewController, ChartViewDelegate {
         
         super.viewDidLayoutSubviews()
 
-        lineChart.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
+        pieChart.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
 
-        lineChart.center = view.center
-        view.addSubview(lineChart)
+        pieChart.center = view.center
+        view.addSubview(pieChart)
         
         var entrius = [ChartDataEntry] ()
         
-        for x in -5..<6 {
-            entrius.append(ChartDataEntry(x: Double(x), y: Double(x*x)))
-        }
-        let set = LineChartDataSet(entries: entrius)
-        set.colors = ChartColorTemplates.joyful()
+        entrius.append(ChartDataEntry(x: Double(35), y: Double(35)))
+        entrius.append(ChartDataEntry(x: Double(40), y: Double(40)))
+        entrius.append(ChartDataEntry(x: Double(25), y: Double(25)))
 
-        let data = LineChartData(dataSet: set)
+        let set = PieChartDataSet(entries: entrius)
+        set.colors = ChartColorTemplates.material()
 
-        lineChart.data = data
+        let data = PieChartData(dataSet: set)
+        #imageLiteral(resourceName: "simulator_screenshot_364D3EEB-8A8D-4D80-80C1-790F751AEFBE.png")
+        pieChart.data = data
     }
     
 
