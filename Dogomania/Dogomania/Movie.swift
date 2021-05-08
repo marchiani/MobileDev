@@ -8,18 +8,18 @@
 import Foundation
 
 struct Welcome: Codable {
-    let search: [Search]
+    let search: [Movie]
     init() {
-        search = [Search]()
+        search = [Movie]()
     }
     enum CodingKeys: String, CodingKey {
         case search = "Search"
     }
 }
 
-struct Search: Codable {
+struct Movie: Codable {
     let title, year, imdbID: String
-    let type: TypeEnum
+    let type: String
     let poster: String
 
     enum CodingKeys: String, CodingKey {
@@ -31,9 +31,4 @@ struct Search: Codable {
     }
 }
 
-enum TypeEnum: String, Codable {
-    case empty = ""
-    case movie = "movie"
-    case test = "test"
-}
 
