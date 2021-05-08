@@ -12,13 +12,15 @@
 		D081B69E2644683600942A6E /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D081B69D2644683600942A6E /* ListViewController.swift */; };
 		D081B6A1264469E800942A6E /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = D081B6A0264469E800942A6E /* Movie.swift */; };
 		D081B6A5264477EF00942A6E /* Movies.json in Resources */ = {isa = PBXBuildFile; fileRef = D081B6A4264477EF00942A6E /* Movies.json */; };
-		D081B6A82645A08400942A6E /* free-innovative-icon-137184-download-innovative-icon-137184-innovative-png-512_512.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = D081B6A72645A08400942A6E /* free-innovative-icon-137184-download-innovative-icon-137184-innovative-png-512_512.jpeg */; };
 		D081B6B02645A4B900942A6E /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D081B6AF2645A4B900942A6E /* MovieDetailsViewController.swift */; };
 		D081B6B32645AF0100942A6E /* MovieDetails in Resources */ = {isa = PBXBuildFile; fileRef = D081B6B22645AF0100942A6E /* MovieDetails */; };
 		D081B6B62645AF6F00942A6E /* MovieDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D081B6B52645AF6F00942A6E /* MovieDetails.swift */; };
 		D081B6BC26468F9800942A6E /* trash.png in Resources */ = {isa = PBXBuildFile; fileRef = D081B6BB26468F9800942A6E /* trash.png */; };
 		D081B6BF264693B000942A6E /* AddMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D081B6BE264693B000942A6E /* AddMovieViewController.swift */; };
 		D081B6C226469FDB00942A6E /* Posters in Resources */ = {isa = PBXBuildFile; fileRef = D081B6C126469FDB00942A6E /* Posters */; };
+		D081B6C52646AA9600942A6E /* ImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D081B6C42646AA9600942A6E /* ImagesViewController.swift */; };
+		D081B6D62646C4EA00942A6E /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D081B6D42646C4EA00942A6E /* MyCollectionViewCell.swift */; };
+		D081B6D72646C4EA00942A6E /* MyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D081B6D52646C4EA00942A6E /* MyCollectionViewCell.xib */; };
 		D0A001D225E4FF5900E55832 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A001D125E4FF5900E55832 /* AppDelegate.swift */; };
 		D0A001D425E4FF5900E55832 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A001D325E4FF5900E55832 /* SceneDelegate.swift */; };
 		D0A001D625E4FF5900E55832 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A001D525E4FF5900E55832 /* ViewController.swift */; };
@@ -35,13 +37,15 @@
 		D081B69D2644683600942A6E /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		D081B6A0264469E800942A6E /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		D081B6A4264477EF00942A6E /* Movies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Movies.json; path = ../../../../../Desktop/Movies.json; sourceTree = "<group>"; };
-		D081B6A72645A08400942A6E /* free-innovative-icon-137184-download-innovative-icon-137184-innovative-png-512_512.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "free-innovative-icon-137184-download-innovative-icon-137184-innovative-png-512_512.jpeg"; path = "../../../../../Desktop/free-innovative-icon-137184-download-innovative-icon-137184-innovative-png-512_512.jpeg"; sourceTree = "<group>"; };
 		D081B6AF2645A4B900942A6E /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
 		D081B6B22645AF0100942A6E /* MovieDetails */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MovieDetails; sourceTree = "<group>"; };
 		D081B6B52645AF6F00942A6E /* MovieDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetails.swift; sourceTree = "<group>"; };
 		D081B6BB26468F9800942A6E /* trash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trash.png; sourceTree = "<group>"; };
 		D081B6BE264693B000942A6E /* AddMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMovieViewController.swift; sourceTree = "<group>"; };
 		D081B6C126469FDB00942A6E /* Posters */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Posters; sourceTree = "<group>"; };
+		D081B6C42646AA9600942A6E /* ImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesViewController.swift; sourceTree = "<group>"; };
+		D081B6D42646C4EA00942A6E /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
+		D081B6D52646C4EA00942A6E /* MyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCollectionViewCell.xib; sourceTree = "<group>"; };
 		D0A001CE25E4FF5900E55832 /* Dogomania.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dogomania.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A001D125E4FF5900E55832 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0A001D325E4FF5900E55832 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,7 +114,6 @@
 				D081B6A4264477EF00942A6E /* Movies.json */,
 				D0A001D725E4FF5900E55832 /* Main.storyboard */,
 				D0A001DA25E4FF5A00E55832 /* Assets.xcassets */,
-				D081B6A72645A08400942A6E /* free-innovative-icon-137184-download-innovative-icon-137184-innovative-png-512_512.jpeg */,
 				D0A001DC25E4FF5A00E55832 /* LaunchScreen.storyboard */,
 				D0A001DF25E4FF5A00E55832 /* Info.plist */,
 				D081B6932644389500942A6E /* StageViewController.swift */,
@@ -120,6 +123,9 @@
 				D081B6AF2645A4B900942A6E /* MovieDetailsViewController.swift */,
 				D081B6B52645AF6F00942A6E /* MovieDetails.swift */,
 				D081B6BE264693B000942A6E /* AddMovieViewController.swift */,
+				D081B6C42646AA9600942A6E /* ImagesViewController.swift */,
+				D081B6D42646C4EA00942A6E /* MyCollectionViewCell.swift */,
+				D081B6D52646C4EA00942A6E /* MyCollectionViewCell.xib */,
 			);
 			path = Dogomania;
 			sourceTree = "<group>";
@@ -183,7 +189,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D081B6A82645A08400942A6E /* free-innovative-icon-137184-download-innovative-icon-137184-innovative-png-512_512.jpeg in Resources */,
+				D081B6D72646C4EA00942A6E /* MyCollectionViewCell.xib in Resources */,
 				D0A001DE25E4FF5A00E55832 /* LaunchScreen.storyboard in Resources */,
 				D081B6B32645AF0100942A6E /* MovieDetails in Resources */,
 				D0A001DB25E4FF5A00E55832 /* Assets.xcassets in Resources */,
@@ -243,7 +249,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D081B6C52646AA9600942A6E /* ImagesViewController.swift in Sources */,
 				D0A001D625E4FF5900E55832 /* ViewController.swift in Sources */,
+				D081B6D62646C4EA00942A6E /* MyCollectionViewCell.swift in Sources */,
 				D0A001D225E4FF5900E55832 /* AppDelegate.swift in Sources */,
 				D081B6BF264693B000942A6E /* AddMovieViewController.swift in Sources */,
 				D081B6A1264469E800942A6E /* Movie.swift in Sources */,

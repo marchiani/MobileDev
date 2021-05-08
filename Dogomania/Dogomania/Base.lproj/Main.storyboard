@@ -3,8 +3,10 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -87,6 +89,7 @@ IВ-83
                         <segue destination="SEa-i0-xBi" kind="relationship" relationship="viewControllers" id="mq8-P2-IB0"/>
                         <segue destination="FBD-YB-iwb" kind="relationship" relationship="viewControllers" id="dCO-tJ-hqz"/>
                         <segue destination="BvO-bH-jDL" kind="relationship" relationship="viewControllers" id="sdt-rV-0ZO"/>
+                        <segue destination="E6B-MJ-oI8" kind="relationship" relationship="viewControllers" id="yiB-VO-b6L"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oC1-ya-CVa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -441,11 +444,71 @@ IВ-83
             </objects>
             <point key="canvasLocation" x="3053.6231884057975" y="-1693.5267857142856"/>
         </scene>
+        <!--Images-->
+        <scene sceneID="QxK-kM-7Gy">
+            <objects>
+                <viewController id="E6B-MJ-oI8" customClass="ImagesViewController" customModule="Dogomania" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="o84-MB-p6k">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uOl-fK-0Ug">
+                                <rect key="frame" x="0.0" y="99" width="414" height="714"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jXe-M1-zQk">
+                                    <size key="itemSize" width="93" height="64"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="50" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Cmg-f4-faB">
+                                        <rect key="frame" x="0.0" y="50" width="93" height="64"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="TFW-x1-icf">
+                                            <rect key="frame" x="0.0" y="0.0" width="93" height="64"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="93" height="64"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptW-14-Zhj">
+                                <rect key="frame" x="336" y="44" width="50" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapButton:" destination="E6B-MJ-oI8" eventType="touchUpInside" id="3CQ-1c-jfH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rxZ-4p-6p1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="uOl-fK-0Ug" firstAttribute="leading" secondItem="rxZ-4p-6p1" secondAttribute="leading" id="FKk-Rb-Rwv"/>
+                            <constraint firstItem="uOl-fK-0Ug" firstAttribute="top" secondItem="rxZ-4p-6p1" secondAttribute="top" priority="800" id="JhP-7N-P8H"/>
+                            <constraint firstItem="rxZ-4p-6p1" firstAttribute="bottom" secondItem="uOl-fK-0Ug" secondAttribute="bottom" id="UVD-hz-S1P"/>
+                            <constraint firstItem="rxZ-4p-6p1" firstAttribute="trailing" secondItem="uOl-fK-0Ug" secondAttribute="trailing" id="gVU-ah-tZ1"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Images" image="bag" catalog="system" id="7pj-4p-vlv"/>
+                    <connections>
+                        <outlet property="collectionView" destination="uOl-fK-0Ug" id="BK5-So-gRR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NUh-Mk-d6n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2282.608695652174" y="-1679.4642857142856"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="bag" catalog="system" width="128" height="128"/>
         <image name="free-innovative-icon-137184-download-innovative-icon-137184-innovative-png-512_512.jpeg" width="512" height="512"/>
         <image name="mail" catalog="system" width="128" height="93"/>
         <image name="paperplane.circle" catalog="system" width="128" height="121"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="ticket" catalog="system" width="128" height="84"/>
         <systemColor name="placeholderTextColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
