@@ -1,17 +1,21 @@
+// This file was generated from JSON Schema using quicktype, do not modify it directly.
+// To parse the JSON, add this file to your project and do:
 //
-//  MovieDetails.swift
-//  Dogomania
-//
-//  Created by SWAN mac on 07.05.2021.
-//
+//   let welcome = try? newJSONDecoder().decode(Welcome.self, from: jsonData)
 
 import Foundation
-struct MovieDetails: Codable {
+
+// MARK: - Welcome
+struct MovieData: Codable {
     let title, year, rated, released: String
     let runtime, genre, director, writer: String
     let actors, plot, language, country: String
-    let awards, poster, imdbRating, imdbVotes: String
-    let imdbID, type, production: String
+    let awards: String
+    let poster: String
+    let ratings: [Rating]
+    let metascore, imdbRating, imdbVotes, imdbID: String
+    let type, dvd, boxOffice, production: String
+    let website, response: String
 
     enum CodingKeys: String, CodingKey {
         case title = "Title"
@@ -28,8 +32,24 @@ struct MovieDetails: Codable {
         case country = "Country"
         case awards = "Awards"
         case poster = "Poster"
+        case ratings = "Ratings"
+        case metascore = "Metascore"
         case imdbRating, imdbVotes, imdbID
         case type = "Type"
+        case dvd = "DVD"
+        case boxOffice = "BoxOffice"
         case production = "Production"
+        case website = "Website"
+        case response = "Response"
+    }
+}
+
+// MARK: - Rating
+struct Rating: Codable {
+    let source, value: String
+
+    enum CodingKeys: String, CodingKey {
+        case source = "Source"
+        case value = "Value"
     }
 }

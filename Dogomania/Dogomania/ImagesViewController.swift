@@ -12,6 +12,7 @@ class ImagesViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var images: [UIImage] = []
+    var isSpinnerSpin = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,8 +20,15 @@ class ImagesViewController: UIViewController {
         self.collectionView.register(MyCollectionViewCell.nib(), forCellWithReuseIdentifier: "MyCollectionViewCell")
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
+        downloadImages()
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+            if (self.images.count == 18 && self.isSpinnerSpin == true){
+                customActivityIndicatory(self.view, startAnimate: false)
+                self.isSpinnerSpin = false
+                self.collectionView.reloadData()
+            }
+        }
     }
-    
     
     @IBAction func didTapButton(_ sender: Any) {
          let vc = UIImagePickerController()
@@ -31,7 +39,39 @@ class ImagesViewController: UIViewController {
         self.collectionView.reloadData()
     }
     
-    
+    func downloadImages() {
+        if(isSpinnerSpin == false)
+        {
+            customActivityIndicatory(self.view, startAnimate: true)
+            self.isSpinnerSpin = true
+        }
+        
+        URLSession.shared.dataTask(with: URL(string: "https://pixabay.com/api/?key=19193969-87191e5db266905fe8936d565&q=small+animals&image_type=photo&per_page=18")!, completionHandler: { data, respons, error  in
+            guard let data = data, error == nil else {
+                print("Something went wrong")
+                return
+            }
+            do {
+                let decodedData = try JSONDecoder().decode(Image.self, from: data)
+                for item in decodedData.hits{
+                    let url = URL(string: item.webformatURL)
+                    DispatchQueue.global().async { [weak self] in
+                        if let data = try? Data(contentsOf: url!) {
+                            if let image = UIImage(data: data) {
+                                DispatchQueue.main.async {
+                                    self?.images.append(image)
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            } catch {
+                print(error)
+            }
+            
+        }).resume()
+    }
 }
 
 extension ImagesViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -41,7 +81,6 @@ extension ImagesViewController: UIImagePickerControllerDelegate, UINavigationCon
         if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
             self.images.append(image)
             self.collectionView.reloadData()
-            self.reloadInputViews()
         }
         picker.dismiss(animated: true, completion: nil)
     }
@@ -60,8 +99,8 @@ extension ImagesViewController: UICollectionViewDelegate {
 
 extension ImagesViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let count: Int = Int(self.images.count/6)
-        return 1 + count
+        let count: Int = Int(ceil(Double(self.images.count) / 6))
+        return count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
