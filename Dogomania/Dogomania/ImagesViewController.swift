@@ -10,7 +10,7 @@ import UIKit
 class ImagesViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    
+    let coreDm = CoreDataManager()
     var images: [UIImage] = []
     var isSpinnerSpin = false
     
@@ -48,12 +48,28 @@ class ImagesViewController: UIViewController {
         
         URLSession.shared.dataTask(with: URL(string: "https://pixabay.com/api/?key=19193969-87191e5db266905fe8936d565&q=small+animals&image_type=photo&per_page=18")!, completionHandler: { data, respons, error  in
             guard let data = data, error == nil else {
+                let storedImages : [ImageCoreData] = self.coreDm.getAllImageCoreDatas()
+                for item in storedImages {
+                    
+                    let url = URL(string: item.webURL ?? "")
+                    DispatchQueue.global().async { [weak self] in
+                        if let data = try? Data(contentsOf: url!) {
+                            if let image = UIImage(data: data) {
+                                DispatchQueue.main.async {
+                                    self?.images.append(image)
+                                }
+                            }
+                        }
+                    }
+                }
+                
                 print("Something went wrong")
                 return
             }
             do {
                 let decodedData = try JSONDecoder().decode(Image.self, from: data)
                 for item in decodedData.hits{
+                    self.coreDm.saveImageCoreData(image: item)
                     let url = URL(string: item.webformatURL)
                     DispatchQueue.global().async { [weak self] in
                         if let data = try? Data(contentsOf: url!) {

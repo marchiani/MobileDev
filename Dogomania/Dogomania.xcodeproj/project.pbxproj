@@ -26,6 +26,8 @@
 		D0A001D925E4FF5900E55832 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A001D725E4FF5900E55832 /* Main.storyboard */; };
 		D0A001DB25E4FF5A00E55832 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0A001DA25E4FF5A00E55832 /* Assets.xcassets */; };
 		D0A001DE25E4FF5A00E55832 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A001DC25E4FF5A00E55832 /* LaunchScreen.storyboard */; };
+		D0FFE1852654F0CF00900F94 /* movieCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0FFE1832654F0CF00900F94 /* movieCoreData.xcdatamodeld */; };
+		D0FFE191265ACA1A00900F94 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FFE190265ACA1A00900F94 /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		D0A001DA25E4FF5A00E55832 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0A001DD25E4FF5A00E55832 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0A001DF25E4FF5A00E55832 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0FFE1842654F0CF00900F94 /* movieCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = movieCoreData.xcdatamodel; sourceTree = "<group>"; };
+		D0FFE190265ACA1A00900F94 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,7 @@
 				D081B6932644389500942A6E /* StageViewController.swift */,
 				D081B69D2644683600942A6E /* ListViewController.swift */,
 				D081B6A0264469E800942A6E /* Movie.swift */,
+				D081B6E12647C91500942A6E /* CustomTableViewCell.swift */,
 				D081B6AF2645A4B900942A6E /* MovieDetailsViewController.swift */,
 				D081B6B52645AF6F00942A6E /* MovieDetails.swift */,
 				D081B6BE264693B000942A6E /* AddMovieViewController.swift */,
@@ -122,7 +127,8 @@
 				D081B6D42646C4EA00942A6E /* MyCollectionViewCell.swift */,
 				D081B6D52646C4EA00942A6E /* MyCollectionViewCell.xib */,
 				D081B6DB2647945000942A6E /* Image.swift */,
-				D081B6E12647C91500942A6E /* CustomTableViewCell.swift */,
+				D0FFE1832654F0CF00900F94 /* movieCoreData.xcdatamodeld */,
+				D0FFE190265ACA1A00900F94 /* CoreDataManager.swift */,
 			);
 			path = Dogomania;
 			sourceTree = "<group>";
@@ -246,10 +252,12 @@
 				D081B6C52646AA9600942A6E /* ImagesViewController.swift in Sources */,
 				D081B6DC2647945000942A6E /* Image.swift in Sources */,
 				D0A001D625E4FF5900E55832 /* ViewController.swift in Sources */,
+				D0FFE191265ACA1A00900F94 /* CoreDataManager.swift in Sources */,
 				D081B6D62646C4EA00942A6E /* MyCollectionViewCell.swift in Sources */,
 				D0A001D225E4FF5900E55832 /* AppDelegate.swift in Sources */,
 				D081B6BF264693B000942A6E /* AddMovieViewController.swift in Sources */,
 				D081B6A1264469E800942A6E /* Movie.swift in Sources */,
+				D0FFE1852654F0CF00900F94 /* movieCoreData.xcdatamodeld in Sources */,
 				D081B6B62645AF6F00942A6E /* MovieDetails.swift in Sources */,
 				D081B6B02645A4B900942A6E /* MovieDetailsViewController.swift in Sources */,
 				D0A001D425E4FF5900E55832 /* SceneDelegate.swift in Sources */,
@@ -457,6 +465,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D0FFE1832654F0CF00900F94 /* movieCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D0FFE1842654F0CF00900F94 /* movieCoreData.xcdatamodel */,
+			);
+			currentVersion = D0FFE1842654F0CF00900F94 /* movieCoreData.xcdatamodel */;
+			path = movieCoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D0A001C625E4FF5900E55832 /* Project object */;
 }

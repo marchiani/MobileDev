@@ -9,19 +9,20 @@ import UIKit
 
 class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDelegate, UITableViewDataSource {
 
+    let coreDm = CoreDataManager()
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var searchText: String = ""
     
-    var movies = [Movie]()
+    var movies = [MovieCoreData]()
     var isSpinnerSpin = false
     
     @IBOutlet weak var search: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(coreDm.getAllMovieCoreDatas())
         self.spinner.hidesWhenStopped = true
         search.delegate = self
         tableView.delegate = self
@@ -38,8 +39,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomTableViewCell
         
         cell.titleLabel01?.text = movies[indexPath.row].title
-        cell.textLabel02?.text = "type: \(movies[indexPath.row].type), year: \(movies[indexPath.row].year)"
-        if let data = try? Data(contentsOf: URL(string: self.movies[indexPath.row].poster)!) {
+        cell.textLabel02?.text = "type: \(String(describing: movies[indexPath.row].type)), year: \(String(describing: movies[indexPath.row].year))"
+        if let data = try? Data(contentsOf: URL(string: self.movies[indexPath.row].poster!)!) {
             if let image = UIImage(data: data) {
                 DispatchQueue.main.async {
                     cell.imageCell?.image = image
@@ -71,6 +72,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
         }
         URLSession.shared.dataTask(with: URL(string: "http://www.omdbapi.com/?apikey=7e9fe69e&s=\(self.searchText.replacingOccurrences(of: " ", with: ""))))'&page=1")!, completionHandler: { data, respons, error  in
             guard let data = data, error == nil else {
+                self.movies = self.coreDm.getAllMovieCoreDatas()
                 print("Something went wrong")
                 return
             }
@@ -80,7 +82,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
                 if (self.isSpinnerSpin) {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                         self.isSpinnerSpin = false
-                        self.movies = decodedData.search
+                        self.movies = self.coreDm.saveMoviesCoreData(movies: decodedData.search)
                         customActivityIndicatory(self.view, startAnimate: false)
                     }
                 }
@@ -139,7 +141,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UISearchBarDele
                 let jsonData = data!.data(using: .utf8)!
                 
                 let decodedData = try JSONDecoder().decode(Movie.self, from: jsonData)
-                self.movies.append(decodedData)
+                
+                self.movies.append(self.coreDm.saveMovieCoreData(movie: decodedData))
                 self.tableView.reloadData()
                 } catch {
                     print(error)

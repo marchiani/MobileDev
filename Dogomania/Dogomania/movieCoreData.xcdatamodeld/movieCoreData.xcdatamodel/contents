@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H524" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ImageCoreData" representedClassName="ImageCoreData" syncable="YES" codeGenerationType="class">
+        <attribute name="imageID" optional="YES" attributeType="String"/>
+        <attribute name="webURL" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="MovieCoreData" representedClassName="MovieCoreData" syncable="YES" codeGenerationType="class">
+        <attribute name="imdbID" optional="YES" attributeType="String"/>
+        <attribute name="poster" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <attribute name="year" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="MovieDetailsCoreData" representedClassName="MovieDetailsCoreData" syncable="YES" codeGenerationType="class">
+        <attribute name="actors" optional="YES" attributeType="String"/>
+        <attribute name="awards" optional="YES" attributeType="String"/>
+        <attribute name="boxOffice" optional="YES" attributeType="String"/>
+        <attribute name="country" optional="YES" attributeType="String"/>
+        <attribute name="director" optional="YES" attributeType="String"/>
+        <attribute name="dvd" optional="YES" attributeType="String"/>
+        <attribute name="genre" optional="YES" attributeType="String"/>
+        <attribute name="imdbID" optional="YES" attributeType="String"/>
+        <attribute name="imdbRating" optional="YES" attributeType="String"/>
+        <attribute name="imdbVotes" optional="YES" attributeType="String"/>
+        <attribute name="language" optional="YES" attributeType="String"/>
+        <attribute name="metascore" optional="YES" attributeType="String"/>
+        <attribute name="plot" optional="YES" attributeType="String"/>
+        <attribute name="poster" optional="YES" attributeType="String"/>
+        <attribute name="production" optional="YES" attributeType="String"/>
+        <attribute name="rated" optional="YES" attributeType="String"/>
+        <attribute name="released" optional="YES" attributeType="String"/>
+        <attribute name="response" optional="YES" attributeType="String"/>
+        <attribute name="runtime" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <attribute name="website" optional="YES" attributeType="String"/>
+        <attribute name="writer" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="year" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="MovieCoreData" positionX="-45" positionY="0" width="128" height="118"/>
+        <element name="MovieDetailsCoreData" positionX="-18" positionY="63" width="128" height="403"/>
+        <element name="ImageCoreData" positionX="9" positionY="189" width="128" height="73"/>
+    </elements>
+</model>

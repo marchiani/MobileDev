@@ -9,6 +9,7 @@ import UIKit
 
 class MovieDetailsViewController: UIViewController {
 
+    let coreDm = CoreDataManager()
     var isSpinnerSpin = false
     @IBOutlet weak var TitleLb: UILabel!
     @IBOutlet weak var YearLb: UILabel!
@@ -28,8 +29,8 @@ class MovieDetailsViewController: UIViewController {
     @IBOutlet weak var imageViewLB: UIImageView!
     var imdbID: String?
     
-    var movie: Movie?
-    var movieDetatils: MovieData?
+    var movie: MovieCoreData?
+    var movieDetatils: MovieDetailsCoreData?
     
     override func viewDidLoad() {
         
@@ -51,7 +52,7 @@ class MovieDetailsViewController: UIViewController {
                 self.RatingLb.text = self.movieDetatils?.rated
                 self.PlotLb.text = self.movieDetatils?.plot
                 self.LanguageLable.text = self.movieDetatils?.language
-                self.imageViewLB.load(stringUrl: self.movieDetatils!.poster)
+                self.imageViewLB.load(stringUrl: self.movieDetatils?.poster! ?? "")
                 
                 customActivityIndicatory(self.view, startAnimate: false)
             }
@@ -64,13 +65,15 @@ class MovieDetailsViewController: UIViewController {
             self.isSpinnerSpin = true
         }
         URLSession.shared.dataTask(with: URL(string: "http://www.omdbapi.com/?apikey=7e9fe69e&i=\(imdbID!)")!, completionHandler: { data, respons, error  in
+
             guard let data = data, error == nil else {
+                self.movieDetatils = self.coreDm.getMovieDetailsByID(imdbID: self.imdbID ?? "")
                 print("Something went wrong")
                 return
             }
             do {
                 let decodedData = try JSONDecoder().decode(MovieData.self, from: data)
-                self.movieDetatils = decodedData
+                self.movieDetatils = self.coreDm.saveMovieDetailsCoreData(movie: decodedData)
                 
             } catch {
                 print(error)
