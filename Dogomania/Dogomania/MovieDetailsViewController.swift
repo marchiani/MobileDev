@@ -9,7 +9,8 @@ import UIKit
 
 class MovieDetailsViewController: UIViewController {
 
-    
+    let coreDm = CoreDataManager()
+    var isSpinnerSpin = false
     @IBOutlet weak var TitleLb: UILabel!
     @IBOutlet weak var YearLb: UILabel!
     @IBOutlet weak var GenreLb: UILabel!
@@ -28,38 +29,59 @@ class MovieDetailsViewController: UIViewController {
     @IBOutlet weak var imageViewLB: UIImageView!
     var imdbID: String?
     
-    var movie: Movie?
-    var movieDetatils: MovieDetails?
+    var movie: MovieCoreData?
+    var movieDetatils: MovieDetailsCoreData?
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         imdbID = movie?.imdbID
-        do {
-            if let bundlePath = Bundle.main.path(forResource: "MovieDetails/\(imdbID!)", ofType: "txt"),
-                let jsonData = try String(contentsOfFile: bundlePath).data(using: .utf8) {
-                let decodedData = try JSONDecoder().decode(MovieDetails.self, from: jsonData)
-                print(decodedData)
-                movieDetatils = decodedData
-                }
+        sendRequest()
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+            
+            if (self.movieDetatils != nil){
+                self.TitleLb.text = self.movieDetatils?.title
+                self.YearLb.text = self.movieDetatils?.year
+                self.GenreLb.text = self.movieDetatils?.genre
+                self.DirectorLb.text = self.movieDetatils?.director
+                self.CountryLable.text = self.movieDetatils?.country
+                self.ActorsLables.text = self.movieDetatils?.actors
+                self.ProductionLb.text = self.movieDetatils?.production
+                self.ReleasedLb.text = self.movieDetatils?.released
+                self.AwardsLb.text = self.movieDetatils?.awards
+                self.RatingLb.text = self.movieDetatils?.rated
+                self.PlotLb.text = self.movieDetatils?.plot
+                self.LanguageLable.text = self.movieDetatils?.language
+                self.imageViewLB.load(stringUrl: self.movieDetatils?.poster! ?? "")
+                
+                customActivityIndicatory(self.view, startAnimate: false)
+            }
+        }
+    }
+    func sendRequest (){
+        if(isSpinnerSpin == false)
+        {
+            customActivityIndicatory(self.view, startAnimate: true)
+            self.isSpinnerSpin = true
+        }
+        URLSession.shared.dataTask(with: URL(string: "http://www.omdbapi.com/?apikey=7e9fe69e&i=\(imdbID!)")!, completionHandler: { data, respons, error  in
+
+            guard let data = data, error == nil else {
+                self.movieDetatils = self.coreDm.getMovieDetailsByID(imdbID: self.imdbID ?? "")
+                print("Something went wrong")
+                return
+            }
+            do {
+                let decodedData = try JSONDecoder().decode(MovieData.self, from: data)
+                self.movieDetatils = self.coreDm.saveMovieDetailsCoreData(movie: decodedData)
+                
             } catch {
                 print(error)
             }
-        
-        TitleLb.text = movieDetatils?.title
-        YearLb.text = movieDetatils?.year
-        GenreLb.text = movieDetatils?.genre
-        DirectorLb.text = movieDetatils?.director
-        CountryLable.text = movieDetatils?.country
-        ActorsLables.text = movieDetatils?.actors
-        ProductionLb.text = movieDetatils?.production
-        ReleasedLb.text = movieDetatils?.released
-        AwardsLb.text = movieDetatils?.awards
-        RatingLb.text = movieDetatils?.rated
-        PlotLb.text = movieDetatils?.plot
-        LanguageLable.text = movieDetatils?.language
-        imageViewLB.image = UIImage(named: "Posters/\( movieDetatils?.poster ?? "trash.png")")
+            
+        }).resume()
     }
     
 
 }
+
